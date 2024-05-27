@@ -11,15 +11,15 @@
 
             if (temperature >= 38)
             {
-                return "You have a fever.";
+                return "Du har feber !!.";
             }
             else if (temperature <= 35)
             {
-                return "You have hypothermia.";
+                return "Du fryser innombords!!.";
             }
             else
             {
-                return "Your temperature is normal.";
+                return "Du är ok !!.";
             }
         }
     }
