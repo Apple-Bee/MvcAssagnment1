@@ -1,7 +1,103 @@
 ﻿@{
     ViewData["Title"] = "About";
+    Layout = "_Layout";
 }
 
-<h2>About Me</h2>
-<p>Here is some information about myself.</p>
+<div class="about-container">
+    <div class="header">
+        <h1>@ViewData["Title"]</h1>
+        <p>A brief introduction about myself.</p>
+    </div>
+    
+    <div class="personal-info">
+        <h2>Personal Information</h2>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john.doe@example.com</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
+    </div>
+    
+    <div class="education">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>Master of Science in Computer Science</strong><br />
+                University of Example, 2020 - 2022
+            </li>
+            <li>
+                <strong>Bachelor of Science in Information Technology</strong><br />
+                Example College, 2016 - 2020
+            </li>
+        </ul>
+    </div>
+    
+    <div class="experience">
+        <h2>Professional Experience</h2>
+        <ul>
+            <li>
+                <strong>Software Developer</strong><br />
+                Example Company, 2022 - Present
+                <ul>
+                    <li>Developed and maintained web applications using ASP.NET Core MVC.</li>
+                    <li>Collaborated with cross-functional teams to define project requirements and deliver solutions.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Intern</strong><br />
+                Another Company, Summer 2021
+                <ul>
+                    <li>Assisted in developing internal tools using C# and .NET.</li>
+                    <li>Participated in code reviews and contributed to the improvement of coding standards.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>ASP.NET Core MVC</li>
+            <li>C#</li>
+            <li>JavaScript, HTML, CSS</li>
+            <li>SQL, Entity Framework</li>
+            <li>Git, GitHub</li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; @DateTime.Now.Year - Tim</p>
+    </div>
+</div>
 
+<style>
+    .about-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .personal-info, .education, .experience, .skills {
+        margin-bottom: 20px;
+    }
+    h1, h2 {
+        color: #333;
+    }
+    p, ul {
+        color: #666;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    ul li {
+        margin-bottom: 10px;
+    }
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
