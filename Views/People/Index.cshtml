@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MvcAssagnment1.ViewModels.PersonViewModel>
+
+@{
+    ViewData["Title"] = "People";
+}
+
+<form method="get">
+    <input type="text" name="searchQuery" placeholder="Search..." />
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.City</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@person.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New Person</a>
+

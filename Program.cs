@@ -1,8 +1,18 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using MvcAssagnment1.Repositories;
+using MvcAssagnment1.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession(); // Add this line to configure session state
+
+// Register the PeopleRepo and PeopleService for dependency injection
+builder.Services.AddSingleton<IPeopleRepo, PeopleRepo>();
+builder.Services.AddTransient<IPeopleService, PeopleService>();
 
 var app = builder.Build();
 
@@ -34,6 +44,10 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "people",
+    pattern: "{controller=People}/{action=Index}/{id?}");
 
 app.Run();
 

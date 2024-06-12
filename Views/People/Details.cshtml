@@ -1,0 +1,21 @@
+﻿@model MvcAssagnment1.ViewModels.PersonViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h3>@Model.Name</h3>
+    <p>City: @Model.City</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+
