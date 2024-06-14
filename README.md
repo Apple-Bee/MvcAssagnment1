@@ -13,3 +13,5 @@ app.MapControllerrote så jag kan länka den i _Layouten
 assagnment 3 en reptition av alla steg fast med annan data som är ett Guessing game
 
 Programmet är testat och verkar fungera :) 
+
+Har lagt till people så man kan skapa, en lista med Namn och stad kan nu tas bort och läggas till 
